@@ -73,3 +73,7 @@ background:url("images/kick.png");
   background-color: white;
 
 }
+.drum :hover{
+  box-shadow: 0 1px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
