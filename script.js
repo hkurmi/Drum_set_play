@@ -4,12 +4,14 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
     //here this is difining the current elemnt which is used by event listener
     var textInnerHtml = this.innerHTML;
     makeSound(textInnerHtml);
+    buttonAnimation(textInnerHtml);
   });
 }
 
 //detecting keyborad input and playing sound
 addEventListener("keypress", function(event) {
   makeSound(event.key);
+  buttonAnimation(event.key);
 });
 
 //function for choosing sound
@@ -52,4 +54,12 @@ function makeSound(key) {
     }
     break;
   }
+}
+
+function buttonAnimation(key){
+  document.querySelector("."+key).classList.add("pressed");
+  setTimeout(function(){
+    document.querySelector("."+key).classList.remove("pressed");
+  },100);
+
 }
